@@ -8,20 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		4777C689226F736800155D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C688226F736800155D0F /* AppDelegate.swift */; };
-		4777C68B226F736800155D0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C68A226F736800155D0F /* ViewController.swift */; };
+		4777C68B226F736800155D0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C68A226F736800155D0F /* HomeViewController.swift */; };
 		4777C68E226F736800155D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4777C68C226F736800155D0F /* Main.storyboard */; };
 		4777C690226F736E00155D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4777C68F226F736E00155D0F /* Assets.xcassets */; };
 		4777C693226F736E00155D0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4777C691226F736E00155D0F /* LaunchScreen.storyboard */; };
+		4777C69E2271DACC00155D0F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C69D2271DACC00155D0F /* GradientView.swift */; };
+		4777C6A02271E33500155D0F /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C69F2271E33500155D0F /* RoundImageView.swift */; };
+		4777C6A22271E44900155D0F /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6A12271E44900155D0F /* RoundedShadowView.swift */; };
+		4777C6A42271E53B00155D0F /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6A32271E53B00155D0F /* CircleView.swift */; };
+		4777C6A62271E6FC00155D0F /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6A52271E6FC00155D0F /* RoundedShadowButton.swift */; };
+		4777C6A82272046C00155D0F /* SlidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6A72272046C00155D0F /* SlidePanelViewController.swift */; };
+		4777C6AA2272050800155D0F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6A92272050800155D0F /* ContainerViewController.swift */; };
+		4777C6AD2272129700155D0F /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6AC2272129700155D0F /* CenterVCDelegate.swift */; };
+		4777C6B02272312500155D0F /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6AF2272312500155D0F /* UIViewExt.swift */; };
+		4777C6B22272401200155D0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6B12272401200155D0F /* LoginViewController.swift */; };
+		D4B5C35DCAC9D72FF42ED8E5 /* Pods_HitchHicher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0976D5F1ED4D5EEAA101ADBF /* Pods_HitchHicher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0976D5F1ED4D5EEAA101ADBF /* Pods_HitchHicher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHicher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4777C685226F736800155D0F /* HitchHicher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitchHicher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4777C688226F736800155D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4777C68A226F736800155D0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4777C68A226F736800155D0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4777C68D226F736800155D0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4777C68F226F736E00155D0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4777C692226F736E00155D0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4777C694226F736E00155D0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4777C69D2271DACC00155D0F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		4777C69F2271E33500155D0F /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		4777C6A12271E44900155D0F /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		4777C6A32271E53B00155D0F /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		4777C6A52271E6FC00155D0F /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		4777C6A72272046C00155D0F /* SlidePanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidePanelViewController.swift; sourceTree = "<group>"; };
+		4777C6A92272050800155D0F /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		4777C6AC2272129700155D0F /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
+		4777C6AF2272312500155D0F /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		4777C6B12272401200155D0F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4BA971B4B2E9B4DD7985015C /* Pods-HitchHicher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitchHicher.release.xcconfig"; path = "Pods/Target Support Files/Pods-HitchHicher/Pods-HitchHicher.release.xcconfig"; sourceTree = "<group>"; };
+		571A0A3368F9853194CBDCF9 /* Pods-HitchHicher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitchHicher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HitchHicher/Pods-HitchHicher.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4B5C35DCAC9D72FF42ED8E5 /* Pods_HitchHicher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +65,8 @@
 			children = (
 				4777C687226F736800155D0F /* HitchHicher */,
 				4777C686226F736800155D0F /* Products */,
+				F6514CE8B1AC2C1CA36DE42B /* Pods */,
+				C112428FFB0F6E32577952BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +81,81 @@
 		4777C687226F736800155D0F /* HitchHicher */ = {
 			isa = PBXGroup;
 			children = (
+				4777C6AE2272310C00155D0F /* Extensions */,
+				4777C6AB2272127900155D0F /* Protocols */,
+				4777C69C2271DA9B00155D0F /* Model */,
+				4777C69B2271DA9300155D0F /* View */,
+				4777C69A2271DA8900155D0F /* Controller */,
 				4777C688226F736800155D0F /* AppDelegate.swift */,
-				4777C68A226F736800155D0F /* ViewController.swift */,
 				4777C68C226F736800155D0F /* Main.storyboard */,
 				4777C68F226F736E00155D0F /* Assets.xcassets */,
 				4777C691226F736E00155D0F /* LaunchScreen.storyboard */,
 				4777C694226F736E00155D0F /* Info.plist */,
 			);
 			path = HitchHicher;
+			sourceTree = "<group>";
+		};
+		4777C69A2271DA8900155D0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4777C6A72272046C00155D0F /* SlidePanelViewController.swift */,
+				4777C68A226F736800155D0F /* HomeViewController.swift */,
+				4777C6A92272050800155D0F /* ContainerViewController.swift */,
+				4777C6B12272401200155D0F /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4777C69B2271DA9300155D0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4777C69D2271DACC00155D0F /* GradientView.swift */,
+				4777C69F2271E33500155D0F /* RoundImageView.swift */,
+				4777C6A12271E44900155D0F /* RoundedShadowView.swift */,
+				4777C6A32271E53B00155D0F /* CircleView.swift */,
+				4777C6A52271E6FC00155D0F /* RoundedShadowButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4777C69C2271DA9B00155D0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4777C6AB2272127900155D0F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4777C6AC2272129700155D0F /* CenterVCDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4777C6AE2272310C00155D0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4777C6AF2272312500155D0F /* UIViewExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C112428FFB0F6E32577952BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0976D5F1ED4D5EEAA101ADBF /* Pods_HitchHicher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6514CE8B1AC2C1CA36DE42B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				571A0A3368F9853194CBDCF9 /* Pods-HitchHicher.debug.xcconfig */,
+				4BA971B4B2E9B4DD7985015C /* Pods-HitchHicher.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4777C697226F736E00155D0F /* Build configuration list for PBXNativeTarget "HitchHicher" */;
 			buildPhases = (
+				F24E290EFEF7530161ADB70E /* [CP] Check Pods Manifest.lock */,
 				4777C681226F736800155D0F /* Sources */,
 				4777C682226F736800155D0F /* Frameworks */,
 				4777C683226F736800155D0F /* Resources */,
+				89152A315FC12D27A71C3737 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +226,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		89152A315FC12D27A71C3737 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HitchHicher/Pods-HitchHicher-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HitchHicher/Pods-HitchHicher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F24E290EFEF7530161ADB70E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HitchHicher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4777C681226F736800155D0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4777C68B226F736800155D0F /* ViewController.swift in Sources */,
+				4777C6B22272401200155D0F /* LoginViewController.swift in Sources */,
+				4777C6AD2272129700155D0F /* CenterVCDelegate.swift in Sources */,
+				4777C6A62271E6FC00155D0F /* RoundedShadowButton.swift in Sources */,
+				4777C6A82272046C00155D0F /* SlidePanelViewController.swift in Sources */,
+				4777C6A42271E53B00155D0F /* CircleView.swift in Sources */,
+				4777C68B226F736800155D0F /* HomeViewController.swift in Sources */,
+				4777C6B02272312500155D0F /* UIViewExt.swift in Sources */,
+				4777C6A02271E33500155D0F /* RoundImageView.swift in Sources */,
+				4777C6A22271E44900155D0F /* RoundedShadowView.swift in Sources */,
 				4777C689226F736800155D0F /* AppDelegate.swift in Sources */,
+				4777C6AA2272050800155D0F /* ContainerViewController.swift in Sources */,
+				4777C69E2271DACC00155D0F /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +441,7 @@
 		};
 		4777C698226F736E00155D0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 571A0A3368F9853194CBDCF9 /* Pods-HitchHicher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +460,7 @@
 		};
 		4777C699226F736E00155D0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BA971B4B2E9B4DD7985015C /* Pods-HitchHicher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
