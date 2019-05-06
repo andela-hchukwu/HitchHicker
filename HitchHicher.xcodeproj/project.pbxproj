@@ -22,6 +22,8 @@
 		4777C6AD2272129700155D0F /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6AC2272129700155D0F /* CenterVCDelegate.swift */; };
 		4777C6B02272312500155D0F /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6AF2272312500155D0F /* UIViewExt.swift */; };
 		4777C6B22272401200155D0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6B12272401200155D0F /* LoginViewController.swift */; };
+		4777C6B42278662500155D0F /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C6B32278662500155D0F /* RoundedCornerTextField.swift */; };
+		4777C6B6227ABFB200155D0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4777C6B5227ABFB100155D0F /* GoogleService-Info.plist */; };
 		D4B5C35DCAC9D72FF42ED8E5 /* Pods_HitchHicher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0976D5F1ED4D5EEAA101ADBF /* Pods_HitchHicher.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		4777C6AC2272129700155D0F /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		4777C6AF2272312500155D0F /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		4777C6B12272401200155D0F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4777C6B32278662500155D0F /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		4777C6B5227ABFB100155D0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BA971B4B2E9B4DD7985015C /* Pods-HitchHicher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitchHicher.release.xcconfig"; path = "Pods/Target Support Files/Pods-HitchHicher/Pods-HitchHicher.release.xcconfig"; sourceTree = "<group>"; };
 		571A0A3368F9853194CBDCF9 /* Pods-HitchHicher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitchHicher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HitchHicher/Pods-HitchHicher.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +95,7 @@
 				4777C68F226F736E00155D0F /* Assets.xcassets */,
 				4777C691226F736E00155D0F /* LaunchScreen.storyboard */,
 				4777C694226F736E00155D0F /* Info.plist */,
+				4777C6B5227ABFB100155D0F /* GoogleService-Info.plist */,
 			);
 			path = HitchHicher;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				4777C6A12271E44900155D0F /* RoundedShadowView.swift */,
 				4777C6A32271E53B00155D0F /* CircleView.swift */,
 				4777C6A52271E6FC00155D0F /* RoundedShadowButton.swift */,
+				4777C6B32278662500155D0F /* RoundedCornerTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4777C693226F736E00155D0F /* LaunchScreen.storyboard in Resources */,
+				4777C6B6227ABFB200155D0F /* GoogleService-Info.plist in Resources */,
 				4777C690226F736E00155D0F /* Assets.xcassets in Resources */,
 				4777C68E226F736800155D0F /* Main.storyboard in Resources */,
 			);
@@ -296,6 +303,7 @@
 				4777C6A02271E33500155D0F /* RoundImageView.swift in Sources */,
 				4777C6A22271E44900155D0F /* RoundedShadowView.swift in Sources */,
 				4777C689226F736800155D0F /* AppDelegate.swift in Sources */,
+				4777C6B42278662500155D0F /* RoundedCornerTextField.swift in Sources */,
 				4777C6AA2272050800155D0F /* ContainerViewController.swift in Sources */,
 				4777C69E2271DACC00155D0F /* GradientView.swift in Sources */,
 			);
