@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4742AC0422802A6A00CC32C5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0322802A6A00CC32C5 /* DataService.swift */; };
 		4777C689226F736800155D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C688226F736800155D0F /* AppDelegate.swift */; };
 		4777C68B226F736800155D0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C68A226F736800155D0F /* HomeViewController.swift */; };
 		4777C68E226F736800155D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4777C68C226F736800155D0F /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0976D5F1ED4D5EEAA101ADBF /* Pods_HitchHicher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHicher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4742AC0322802A6A00CC32C5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4777C685226F736800155D0F /* HitchHicher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitchHicher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4777C688226F736800155D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4777C68A226F736800155D0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4742AC0222802A4F00CC32C5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4742AC0322802A6A00CC32C5 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		4777C67C226F736800155D0F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		4777C687226F736800155D0F /* HitchHicher */ = {
 			isa = PBXGroup;
 			children = (
+				4742AC0222802A4F00CC32C5 /* Services */,
 				4777C6AE2272310C00155D0F /* Extensions */,
 				4777C6AB2272127900155D0F /* Protocols */,
 				4777C69C2271DA9B00155D0F /* Model */,
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4777C6B22272401200155D0F /* LoginViewController.swift in Sources */,
+				4742AC0422802A6A00CC32C5 /* DataService.swift in Sources */,
 				4777C6AD2272129700155D0F /* CenterVCDelegate.swift in Sources */,
 				4777C6A62271E6FC00155D0F /* RoundedShadowButton.swift in Sources */,
 				4777C6A82272046C00155D0F /* SlidePanelViewController.swift in Sources */,
