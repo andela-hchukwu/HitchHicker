@@ -10,7 +10,7 @@ import UIKit
 
 class RoundedCornerTextField: UITextField {
 
-    var textRectOffset: CGFloat = 20
+    var textRectOffset: CGFloat = 15
 
     override func awakeFromNib() {
         setupView()
@@ -21,10 +21,11 @@ class RoundedCornerTextField: UITextField {
     }
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: 0 + textRectOffset, y: 0 + (textRectOffset / 4), width: self.frame.width - textRectOffset, height: self.frame.height + textRectOffset)
+        return CGRect(x: 0 + textRectOffset, y: 0 + (textRectOffset / 4), width: self.frame.width - textRectOffset, height: self.frame.height + (textRectOffset / 2))
     }
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: 0 + textRectOffset, y: 0 + (textRectOffset / 4), width: self.frame.width - textRectOffset, height: self.frame.height + textRectOffset)
+        return CGRect(x: 0 + textRectOffset, y: 0 + (textRectOffset / 4), width: self.frame.width - textRectOffset, height: self.frame.height + (textRectOffset / 2))
     }
+
 }

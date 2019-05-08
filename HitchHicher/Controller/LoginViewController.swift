@@ -35,7 +35,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func authBtnWasPressed(_ sender: Any) {
-        if emailField.text != nil && passwordField.text != nil {
+        guard emailField?.text != nil, passwordField?.text != nil, emailField.text != "", passwordField.text != "" else { return }
+        
             authBtn.animateButton(shouldLoad: true, withMessage: nil)
             self.view.endEditing(true)
 
@@ -95,7 +96,6 @@ class LoginViewController: UIViewController {
                     }
                 }
             }
-        }
     }
 }
 
