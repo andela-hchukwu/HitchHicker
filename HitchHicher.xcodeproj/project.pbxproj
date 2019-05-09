@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4742AC0422802A6A00CC32C5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0322802A6A00CC32C5 /* DataService.swift */; };
+		4742AC0622847A1600CC32C5 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0522847A1600CC32C5 /* UpdateService.swift */; };
+		4742AC0822847F9600CC32C5 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0722847F9600CC32C5 /* DriverAnnotation.swift */; };
 		4777C689226F736800155D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C688226F736800155D0F /* AppDelegate.swift */; };
 		4777C68B226F736800155D0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C68A226F736800155D0F /* HomeViewController.swift */; };
 		4777C68E226F736800155D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4777C68C226F736800155D0F /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		0976D5F1ED4D5EEAA101ADBF /* Pods_HitchHicher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHicher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4742AC0322802A6A00CC32C5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		4742AC0522847A1600CC32C5 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
+		4742AC0722847F9600CC32C5 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		4777C685226F736800155D0F /* HitchHicher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitchHicher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4777C688226F736800155D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4777C68A226F736800155D0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				4742AC0322802A6A00CC32C5 /* DataService.swift */,
+				4742AC0522847A1600CC32C5 /* UpdateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				4777C6A32271E53B00155D0F /* CircleView.swift */,
 				4777C6A52271E6FC00155D0F /* RoundedShadowButton.swift */,
 				4777C6B32278662500155D0F /* RoundedCornerTextField.swift */,
+				4742AC0722847F9600CC32C5 /* DriverAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,7 +318,9 @@
 				4777C6A42271E53B00155D0F /* CircleView.swift in Sources */,
 				4777C68B226F736800155D0F /* HomeViewController.swift in Sources */,
 				4777C6B02272312500155D0F /* UIViewExt.swift in Sources */,
+				4742AC0822847F9600CC32C5 /* DriverAnnotation.swift in Sources */,
 				4777C6A02271E33500155D0F /* RoundImageView.swift in Sources */,
+				4742AC0622847A1600CC32C5 /* UpdateService.swift in Sources */,
 				4777C6A22271E44900155D0F /* RoundedShadowView.swift in Sources */,
 				4777C689226F736800155D0F /* AppDelegate.swift in Sources */,
 				4777C6B42278662500155D0F /* RoundedCornerTextField.swift in Sources */,

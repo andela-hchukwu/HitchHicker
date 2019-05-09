@@ -206,6 +206,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="centerMapBtn" destination="k9d-pP-HSH" id="ynF-Nx-KiW"/>
                         <outlet property="mapView" destination="t1H-vC-Yke" id="vAz-TH-5wN"/>
                         <outlet property="requestRideBtn" destination="Phi-g9-kzn" id="YiU-Pv-XrM"/>
                     </connections>
