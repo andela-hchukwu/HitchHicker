@@ -43,5 +43,9 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>HTCHHKR needs your location so our driver can find you</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>HTCHHKR needs your location so our driver can find you</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>HTCHHKR needs your location so our driver can find you</string>
 </dict>
 </plist>
