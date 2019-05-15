@@ -25,10 +25,14 @@ class HomeViewController: UIViewController {
     var manager: CLLocationManager?
     var regionRadius: CLLocationDistance = 1000
 
+    var currentUserId: String?
+
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launchScreenIcon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
 
     var tableView = UITableView()
     var matchingItems: [MKMapItem] = [MKMapItem]()
+
+    var selectedItemPlacemark: MKPlacemark? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,8 @@ class HomeViewController: UIViewController {
         manager?.delegate = self
         manager?.desiredAccuracy = kCLLocationAccuracyBest
         checkLocationAuthStatus()
+
+        currentUserId = Auth.auth().currentUser?.uid
 
         mapView.delegate = self
         destinationTextField.delegate = self
@@ -145,6 +151,23 @@ extension HomeViewController: MKMapViewDelegate {
             view.image = UIImage(named: "driverAnnotation")
 
             return view
+        } else if let annotation = annotation as? PassengerAnnotation {
+            let identifier = "passenger"
+            var view: MKAnnotationView
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "currentLocationAnnotation")
+
+            return view
+        } else if let annotation = annotation as? MKPointAnnotation {
+            let identifier = "destination"
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "destination")
+            if annotationView == nil {
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            } else {
+                annotationView?.annotation = annotation
+            }
+            annotationView?.image = UIImage(named: "destinationAnnotation")
+            return annotationView
         }
 
         return nil
@@ -176,6 +199,20 @@ extension HomeViewController: MKMapViewDelegate {
                 }
             }
         }
+    }
+
+    func dropPinFor(placemark: MKPlacemark) {
+        selectedItemPlacemark = placemark
+
+        for annotation in mapView.annotations {
+            if annotation.isKind(of: MKPointAnnotation.self) {
+                mapView.removeAnnotation(annotation)
+            }
+        }
+
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        mapView.addAnnotation(annotation)
     }
 }
 
@@ -265,8 +302,34 @@ extension HomeViewController: UITextFieldDelegate {
 extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        guard let userId = currentUserId,
+            let passengerCoordinate = manager?.location?.coordinate
+                else { return }
+
+        let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate, key: userId)
+        mapView.addAnnotation(passengerAnnotation)
+
+        destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+
+        let selectedMapItem = matchingItems[indexPath.row]
+
+        DataService.instance.REF_USERS.child(userId).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
+
+        dropPinFor(placemark: selectedMapItem.placemark)
+
         animateTableView(shouldShow: false)
-        print("selected")
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if destinationTextField.text == "" || destinationTextField.text == nil {
+            animateTableView(shouldShow: false)
+        }
     }
 
 }
