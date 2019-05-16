@@ -207,6 +207,7 @@ extension HomeViewController: MKMapViewDelegate {
                         self.matchingItems.append(mapItem)
                     }
                     self.tableView.reloadData()
+                    self.shouldPresentLoadingView(false)
                 }
             }
         }
@@ -242,6 +243,8 @@ extension HomeViewController: MKMapViewDelegate {
             self.route = response.routes[0]
 
             self.mapView.addOverlay(self.route.polyline)
+
+            self.shouldPresentLoadingView(false)
         }
     }
 }
@@ -287,6 +290,7 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == destinationTextField {
              performSearch()
+            shouldPresentLoadingView(true)
             view.endEditing(true)
         }
         return true
@@ -306,6 +310,17 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         matchingItems = []
         tableView.reloadData()
+
+        DataService.instance.REF_USERS.child(currentUserId!).child("tripCoordinate").removeValue()
+
+        mapView.removeOverlays(mapView.overlays)
+        for annotation in mapView.annotations {
+            if let annotation = annotation as? MKPointAnnotation {
+                mapView.removeAnnotation(annotation)
+            } else if annotation.isKind(of: PassengerAnnotation.self) {
+                mapView.removeAnnotation(annotation)
+            }
+        }
         centerMapOnUserLocation()
         return true
     }
@@ -332,6 +347,8 @@ extension HomeViewController: UITextFieldDelegate {
 extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        shouldPresentLoadingView(true)
 
         guard let userId = currentUserId,
             let passengerCoordinate = manager?.location?.coordinate

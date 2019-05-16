@@ -11,6 +11,7 @@
 		4742AC0622847A1600CC32C5 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0522847A1600CC32C5 /* UpdateService.swift */; };
 		4742AC0822847F9600CC32C5 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0722847F9600CC32C5 /* DriverAnnotation.swift */; };
 		4742AC0A228C488000CC32C5 /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC09228C488000CC32C5 /* PassengerAnnotation.swift */; };
+		4742AC0C228D6C4400CC32C5 /* UiViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0B228D6C4400CC32C5 /* UiViewControllerExt.swift */; };
 		4777C689226F736800155D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C688226F736800155D0F /* AppDelegate.swift */; };
 		4777C68B226F736800155D0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C68A226F736800155D0F /* HomeViewController.swift */; };
 		4777C68E226F736800155D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4777C68C226F736800155D0F /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		4742AC0522847A1600CC32C5 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		4742AC0722847F9600CC32C5 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		4742AC09228C488000CC32C5 /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
+		4742AC0B228D6C4400CC32C5 /* UiViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExt.swift; sourceTree = "<group>"; };
 		4777C685226F736800155D0F /* HitchHicher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitchHicher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4777C688226F736800155D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4777C68A226F736800155D0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4777C6AF2272312500155D0F /* UIViewExt.swift */,
+				4742AC0B228D6C4400CC32C5 /* UiViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				4777C6A42271E53B00155D0F /* CircleView.swift in Sources */,
 				4777C68B226F736800155D0F /* HomeViewController.swift in Sources */,
 				4742AC0A228C488000CC32C5 /* PassengerAnnotation.swift in Sources */,
+				4742AC0C228D6C4400CC32C5 /* UiViewControllerExt.swift in Sources */,
 				4777C6B02272312500155D0F /* UIViewExt.swift in Sources */,
 				4742AC0822847F9600CC32C5 /* DriverAnnotation.swift in Sources */,
 				4777C6A02271E33500155D0F /* RoundImageView.swift in Sources */,
