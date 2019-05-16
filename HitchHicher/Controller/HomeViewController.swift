@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
     var tableView = UITableView()
     var matchingItems: [MKMapItem] = [MKMapItem]()
 
+    var route: MKRoute!
+
     var selectedItemPlacemark: MKPlacemark? = nil
 
     override func viewDidLoad() {
@@ -177,6 +179,15 @@ extension HomeViewController: MKMapViewDelegate {
         centerMapBtn.fadeTo(alphaValue: 1.0, withDuration: 0.2)
     }
 
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let lineRenderer = MKPolylineRenderer(overlay: self.route.polyline)
+        lineRenderer.strokeColor = UIColor(red: 216 / 255, green: 71 / 255, blue: 30 / 255, alpha: 0.75)
+        lineRenderer.lineWidth = 3
+//        lineRenderer.lineJoin = .bevel
+
+        return lineRenderer
+    }
+
     func performSearch() {
         matchingItems.removeAll()
 
@@ -213,6 +224,25 @@ extension HomeViewController: MKMapViewDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         mapView.addAnnotation(annotation)
+    }
+
+    func searchMapKitForResultsWithPolyline(forMapItem mapItem: MKMapItem) {
+        let request = MKDirections.Request()
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = mapItem
+        request.transportType = .automobile
+
+        let directions = MKDirections(request: request)
+
+        directions.calculate { (response, error) in
+            guard let response = response else {
+                print(error.debugDescription)
+                return
+            }
+            self.route = response.routes[0]
+
+            self.mapView.addOverlay(self.route.polyline)
+        }
     }
 }
 
@@ -317,6 +347,8 @@ extension HomeViewController: UITableViewDelegate {
         DataService.instance.REF_USERS.child(userId).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
 
         dropPinFor(placemark: selectedMapItem.placemark)
+
+        searchMapKitForResultsWithPolyline(forMapItem: selectedMapItem)
 
         animateTableView(shouldShow: false)
         tableView.deselectRow(at: indexPath, animated: true)
