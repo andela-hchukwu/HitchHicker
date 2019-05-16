@@ -12,7 +12,7 @@ import CoreLocation
 import RevealingSplashView
 import  Firebase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, Alertable {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var requestRideBtn: RoundedShadowButton!
@@ -125,8 +125,22 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
-        centerMapOnUserLocation()
-        centerMapBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+
+        DataService.instance.REF_USERS.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let userSnapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for user in userSnapshot {
+                    if user.key == self.currentUserId! {
+                        if user.hasChild("tripCoordinate") {
+                            self.zoom(toFitAnnotationsFromMapView: self.mapView)
+                            self.centerMapBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+                        } else {
+                            self.centerMapOnUserLocation()
+                            self.centerMapBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+                        }
+                    }
+                }
+            }
+        })
     }
 
     @IBAction func requestRideBtnWasPressed(_ sender: Any) {
@@ -185,6 +199,8 @@ extension HomeViewController: MKMapViewDelegate {
         lineRenderer.lineWidth = 3
 //        lineRenderer.lineJoin = .bevel
 
+        zoom(toFitAnnotationsFromMapView: self.mapView)
+
         return lineRenderer
     }
 
@@ -198,9 +214,9 @@ extension HomeViewController: MKMapViewDelegate {
         let search = MKLocalSearch(request: request)
         search.start { (response, error) in
             if error != nil {
-                print(error.debugDescription)
+                self.showAlert("An error occured, please try again.")
             } else if response?.mapItems.count == 0 {
-                print("No results!!")
+                self.showAlert("no results! Please search again for a different location")
             } else {
                 if let mapItems = response?.mapItems {
                     for mapItem in mapItems {
@@ -237,7 +253,7 @@ extension HomeViewController: MKMapViewDelegate {
 
         directions.calculate { (response, error) in
             guard let response = response else {
-                print(error.debugDescription)
+                self.showAlert("An error occured Please try again.")
                 return
             }
             self.route = response.routes[0]
@@ -246,6 +262,27 @@ extension HomeViewController: MKMapViewDelegate {
 
             self.shouldPresentLoadingView(false)
         }
+    }
+
+    func zoom(toFitAnnotationsFromMapView mapView: MKMapView) {
+        if mapView.annotations.count == 0 {
+            return
+        }
+
+        var topLeftCoordinate = CLLocationCoordinate2D(latitude: -90, longitude: 180)
+        var bottomRightCoordinate = CLLocationCoordinate2D(latitude: 90, longitude: -180)
+
+        for annotation in mapView.annotations where !annotation.isKind(of: DriverAnnotation.self) {
+            topLeftCoordinate.longitude = fmin(topLeftCoordinate.longitude, annotation.coordinate.longitude)
+            topLeftCoordinate.latitude = fmax(topLeftCoordinate.latitude, annotation.coordinate.latitude)
+            bottomRightCoordinate.longitude = fmax(bottomRightCoordinate.longitude, annotation.coordinate.longitude)
+            bottomRightCoordinate.latitude = fmin(bottomRightCoordinate.latitude, annotation.coordinate.longitude)
+        }
+
+        var region = MKCoordinateRegion(center: CLLocationCoordinate2DMake(topLeftCoordinate.latitude - (topLeftCoordinate.latitude - bottomRightCoordinate.latitude) * 0.5, topLeftCoordinate.longitude + (bottomRightCoordinate.longitude - topLeftCoordinate.longitude) * 0.5), span: MKCoordinateSpan(latitudeDelta: fabs(topLeftCoordinate.latitude - bottomRightCoordinate.latitude) * 2.0, longitudeDelta: fabs(bottomRightCoordinate.longitude - topLeftCoordinate.longitude) * 2.0))
+
+        region = mapView.regionThatFits(region)
+        mapView.setRegion(region, animated: true)
     }
 }
 

@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func authBtnWasPressed(_ sender: Any) {
         guard emailField?.text != nil, passwordField?.text != nil, emailField.text != "", passwordField.text != "" else { return }
-        
+
             authBtn.animateButton(shouldLoad: true, withMessage: nil)
             self.view.endEditing(true)
 
@@ -58,9 +58,9 @@ class LoginViewController: UIViewController {
                         if let errorCode = AuthErrorCode(rawValue: error!._code) {
                             switch errorCode {
                             case .wrongPassword:
-                                print("whoops that was the wrong password")
+                                self.showAlert("hoops that was the wrong password")
                             default:
-                                print("An unexpected error occurred Please try again.")
+                                self.showAlert("An unexpected error occurred Please try again.")
                             }
 
                         }
@@ -70,12 +70,11 @@ class LoginViewController: UIViewController {
                                 if let errorCode = AuthErrorCode(rawValue: error!._code) {
                                     switch errorCode {
                                     case .emailAlreadyInUse:
-                                        print("That email is already in use. Please try again.")
+                                        self.showAlert("That email is already in use. Please try again.")
                                     case .invalidEmail:
-                                        print("That is an invalid email!Please try again")
+                                        self.showAlert("That is an invalid email!Please try again")
                                     default:
-                                        print("An unexpected error occurred Please try again.")
-
+                                        self.showAlert("An unexpected error occurred Please try again.")
                                     }
                                 }
 
@@ -100,5 +99,9 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
+
+}
+
+extension LoginViewController: Alertable {
 
 }
