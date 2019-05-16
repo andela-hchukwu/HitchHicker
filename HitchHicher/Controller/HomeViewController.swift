@@ -62,6 +62,26 @@ class HomeViewController: UIViewController, Alertable {
         revealingSplashView.startAnimation()
 
         revealingSplashView.heartAttack = true
+
+        UpdateService.instance.observeTrips { (tripDict) in
+            if let tripDict = tripDict {
+                guard let pickupCoordinateArray = tripDict["pickupCoordinate"] as? NSArray,
+                    let tripKey = tripDict["passengerKey"] as? String,
+                    let acceptanceStatus = tripDict["tripIsAccepted"] as? Bool
+                    else { return }
+
+                if acceptanceStatus == false {
+                    DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { available in
+                        if available == true {
+                            let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+                            guard let pickupVC = sb.instantiateViewController(withIdentifier: "PickupViewController") as? PickupViewController else { return }
+                            pickupVC.initData(coordinate: CLLocationCoordinate2D(latitude: pickupCoordinateArray[0] as! CLLocationDegrees, longitude: pickupCoordinateArray[1] as! CLLocationDegrees), passengerKey: tripKey)
+                            self.present(pickupVC, animated: true, completion: nil)
+                        }
+                    })
+                }
+            }
+        }
     }
 
     func checkLocationAuthStatus() {
@@ -144,7 +164,11 @@ class HomeViewController: UIViewController, Alertable {
     }
 
     @IBAction func requestRideBtnWasPressed(_ sender: Any) {
+        UpdateService.instance.updateTripsWithCoordinateUponRequest()
         requestRideBtn.animateButton(shouldLoad: true, withMessage: nil)
+
+        self.view.endEditing(true)
+        destinationTextField.isUserInteractionEnabled = false
     }
     @IBAction func menuBtnWasPressed(_ sender: Any) {
         delegate?.toggleLeftPanel()

@@ -513,6 +513,97 @@
             </objects>
             <point key="canvasLocation" x="1636" y="133.5832083958021"/>
         </scene>
+        <!--Pickup View Controller-->
+        <scene sceneID="L6k-q5-9fR">
+            <objects>
+                <viewController storyboardIdentifier="PickupViewController" id="O1O-BQ-6px" customClass="PickupViewController" customModule="HitchHicher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hEE-Qb-m88">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0M-pI-uaU">
+                                <rect key="frame" x="20" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="t6o-D8-OZ8"/>
+                                    <constraint firstAttribute="width" constant="30" id="yRN-OR-rst"/>
+                                </constraints>
+                                <state key="normal" image="cancelBtn"/>
+                                <connections>
+                                    <action selector="cancelBtnWasPressed:" destination="O1O-BQ-6px" eventType="touchUpInside" id="JUX-3M-gdQ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hZ-7u-E1A">
+                                <rect key="frame" x="94.5" y="35" width="186" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpG-Wa-lvr">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXc-7h-VVz">
+                                        <rect key="frame" x="103.5" y="0.0" width="82.5" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="36"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lGN-6F-pSt"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfV-D6-acI" customClass="RoundedShadowButton" customModule="HitchHicher" customModuleProvider="target">
+                                <rect key="frame" x="16" y="587" width="343" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1Kx-Zo-fUI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="28"/>
+                                <state key="normal" title="ACCEPT TRIP">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.32156862749999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="acceptTripBtnWasPressed:" destination="O1O-BQ-6px" eventType="touchUpInside" id="eVZ-qJ-ncw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to pick up this passenger?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuw-1p-rmm">
+                                <rect key="frame" x="16" y="543.5" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="igE-gg-py1" customClass="RoundMapView" customModule="HitchHicher" customModuleProvider="target">
+                                <rect key="frame" x="27.5" y="173.5" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="bCq-Is-8e6"/>
+                                    <constraint firstAttribute="width" constant="320" id="pSK-cq-EeY"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.32156862745098036" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nuw-1p-rmm" firstAttribute="leading" secondItem="JjK-7v-x4Q" secondAttribute="leading" constant="16" id="7rW-pe-mHr"/>
+                            <constraint firstItem="MfV-D6-acI" firstAttribute="leading" secondItem="JjK-7v-x4Q" secondAttribute="leading" constant="16" id="9V4-iL-55B"/>
+                            <constraint firstItem="5hZ-7u-E1A" firstAttribute="centerX" secondItem="hEE-Qb-m88" secondAttribute="centerX" id="DPW-s1-oa5"/>
+                            <constraint firstItem="JjK-7v-x4Q" firstAttribute="bottom" secondItem="MfV-D6-acI" secondAttribute="bottom" constant="20" id="EMn-DI-RoP"/>
+                            <constraint firstItem="MfV-D6-acI" firstAttribute="top" secondItem="Nuw-1p-rmm" secondAttribute="bottom" constant="20" id="OA2-Ol-Sct"/>
+                            <constraint firstItem="igE-gg-py1" firstAttribute="centerX" secondItem="hEE-Qb-m88" secondAttribute="centerX" id="XKu-pI-gH7"/>
+                            <constraint firstItem="5hZ-7u-E1A" firstAttribute="centerY" secondItem="a0M-pI-uaU" secondAttribute="centerY" id="Yzq-Do-kAc"/>
+                            <constraint firstItem="JjK-7v-x4Q" firstAttribute="trailing" secondItem="Nuw-1p-rmm" secondAttribute="trailing" constant="16" id="bmV-5r-bJN"/>
+                            <constraint firstItem="JjK-7v-x4Q" firstAttribute="trailing" secondItem="MfV-D6-acI" secondAttribute="trailing" constant="16" id="dD6-Xa-ebv"/>
+                            <constraint firstItem="igE-gg-py1" firstAttribute="centerY" secondItem="hEE-Qb-m88" secondAttribute="centerY" id="n8O-jl-FsX"/>
+                            <constraint firstItem="a0M-pI-uaU" firstAttribute="top" secondItem="JjK-7v-x4Q" secondAttribute="top" constant="20" id="six-Js-rZx"/>
+                            <constraint firstItem="a0M-pI-uaU" firstAttribute="leading" secondItem="JjK-7v-x4Q" secondAttribute="leading" constant="20" id="y4D-jJ-zyP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JjK-7v-x4Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickupMapView" destination="igE-gg-py1" id="FKQ-3p-K2A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mt-LJ-jab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2432.8000000000002" y="133.5832083958021"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cancelBtn" width="32" height="31"/>

@@ -13,6 +13,8 @@
 		4742AC0A228C488000CC32C5 /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC09228C488000CC32C5 /* PassengerAnnotation.swift */; };
 		4742AC0C228D6C4400CC32C5 /* UiViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0B228D6C4400CC32C5 /* UiViewControllerExt.swift */; };
 		4742AC0E228D9D3100CC32C5 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0D228D9D3100CC32C5 /* Alertable.swift */; };
+		4742AC10228DBBE700CC32C5 /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC0F228DBBE700CC32C5 /* PickupViewController.swift */; };
+		4742AC12228DBCC000CC32C5 /* RoundMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742AC11228DBCC000CC32C5 /* RoundMapView.swift */; };
 		4777C689226F736800155D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C688226F736800155D0F /* AppDelegate.swift */; };
 		4777C68B226F736800155D0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777C68A226F736800155D0F /* HomeViewController.swift */; };
 		4777C68E226F736800155D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4777C68C226F736800155D0F /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		4742AC09228C488000CC32C5 /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		4742AC0B228D6C4400CC32C5 /* UiViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExt.swift; sourceTree = "<group>"; };
 		4742AC0D228D9D3100CC32C5 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		4742AC0F228DBBE700CC32C5 /* PickupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
+		4742AC11228DBCC000CC32C5 /* RoundMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundMapView.swift; sourceTree = "<group>"; };
 		4777C685226F736800155D0F /* HitchHicher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitchHicher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4777C688226F736800155D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4777C68A226F736800155D0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				4777C68A226F736800155D0F /* HomeViewController.swift */,
 				4777C6A92272050800155D0F /* ContainerViewController.swift */,
 				4777C6B12272401200155D0F /* LoginViewController.swift */,
+				4742AC0F228DBBE700CC32C5 /* PickupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				4777C6B32278662500155D0F /* RoundedCornerTextField.swift */,
 				4742AC0722847F9600CC32C5 /* DriverAnnotation.swift */,
 				4742AC09228C488000CC32C5 /* PassengerAnnotation.swift */,
+				4742AC11228DBCC000CC32C5 /* RoundMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4742AC10228DBBE700CC32C5 /* PickupViewController.swift in Sources */,
 				4777C6B22272401200155D0F /* LoginViewController.swift in Sources */,
 				4742AC0422802A6A00CC32C5 /* DataService.swift in Sources */,
 				4777C6AD2272129700155D0F /* CenterVCDelegate.swift in Sources */,
@@ -333,6 +340,7 @@
 				4742AC0E228D9D3100CC32C5 /* Alertable.swift in Sources */,
 				4777C6A02271E33500155D0F /* RoundImageView.swift in Sources */,
 				4742AC0622847A1600CC32C5 /* UpdateService.swift in Sources */,
+				4742AC12228DBCC000CC32C5 /* RoundMapView.swift in Sources */,
 				4777C6A22271E44900155D0F /* RoundedShadowView.swift in Sources */,
 				4777C689226F736800155D0F /* AppDelegate.swift in Sources */,
 				4777C6B42278662500155D0F /* RoundedCornerTextField.swift in Sources */,
