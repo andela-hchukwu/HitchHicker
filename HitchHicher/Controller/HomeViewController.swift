@@ -84,6 +84,29 @@ class HomeViewController: UIViewController, Alertable {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { status in
+            if status == false {
+                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { tripSnapshot in
+                    if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot] {
+                        for trip in tripSnapshot {
+                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId! {
+                                let pickipCoordinateArray = trip.childSnapshot(forPath: "pickupCoordinate").value as! NSArray
+                                let pickupCoordinate = CLLocationCoordinate2D(latitude: pickipCoordinateArray[0] as! CLLocationDegrees, longitude: pickipCoordinateArray[1] as! CLLocationDegrees)
+                                let pickupPlacemark = MKPlacemark(coordinate: pickupCoordinate)
+
+                                self.dropPinFor(placemark: pickupPlacemark)
+                                self.searchMapKitForResultsWithPolyline(forMapItem: MKMapItem(placemark: pickupPlacemark))
+                            }
+                        }
+                    }
+                })
+            }
+        })
+    }
+
     func checkLocationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
             manager?.startUpdatingLocation()
@@ -222,6 +245,7 @@ extension HomeViewController: MKMapViewDelegate {
         lineRenderer.strokeColor = UIColor(red: 216 / 255, green: 71 / 255, blue: 30 / 255, alpha: 0.75)
         lineRenderer.lineWidth = 3
 //        lineRenderer.lineJoin = .bevel
+        shouldPresentLoadingView(false)
 
         zoom(toFitAnnotationsFromMapView: self.mapView)
 
@@ -284,7 +308,8 @@ extension HomeViewController: MKMapViewDelegate {
 
             self.mapView.addOverlay(self.route.polyline)
 
-            self.shouldPresentLoadingView(false)
+            let delegate = AppDelegate.getAppDelegate()
+            delegate.window?.rootViewController?.shouldPresentLoadingView(false)
         }
     }
 
