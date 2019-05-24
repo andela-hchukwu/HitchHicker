@@ -182,12 +182,27 @@
                                     <constraint firstAttribute="trailing" secondItem="Z5C-83-UHy" secondAttribute="trailing" constant="16" id="ipS-GT-cqD"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qp-KP-qSH">
+                                <rect key="frame" x="140" y="535" width="95" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="1FZ-Au-OYT"/>
+                                    <constraint firstAttribute="height" constant="28" id="aRv-Lu-kUf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="Cancel trip">
+                                    <color key="titleColor" red="0.84705882349999995" green="0.2784313725" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a8e-o5-YCf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1yu-fu-GMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="244-1x-hzG"/>
                             <constraint firstItem="vVI-v8-D0R" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3re-Pp-FRh"/>
                             <constraint firstItem="t1H-vC-Yke" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7EI-sD-zmM"/>
+                            <constraint firstItem="9Qp-KP-qSH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IUE-91-rrE"/>
                             <constraint firstItem="of0-Hg-vKh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LER-df-acf"/>
                             <constraint firstItem="DXo-4c-JrM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Lbi-d1-Mqd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k9d-pP-HSH" secondAttribute="trailing" constant="16" id="MYB-xb-Ioh"/>
@@ -196,17 +211,20 @@
                             <constraint firstItem="t1H-vC-Yke" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SZs-Yv-H7O"/>
                             <constraint firstItem="vVI-v8-D0R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V96-6e-iHV"/>
                             <constraint firstItem="vVI-v8-D0R" firstAttribute="top" secondItem="k9d-pP-HSH" secondAttribute="bottom" constant="8" id="Wz3-zR-FCM"/>
+                            <constraint firstItem="vVI-v8-D0R" firstAttribute="top" secondItem="9Qp-KP-qSH" secondAttribute="bottom" constant="24" id="Zsd-R4-9Pp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1yu-fu-GMo" secondAttribute="trailing" constant="16" id="baX-Jn-gfs"/>
                             <constraint firstItem="1yu-fu-GMo" firstAttribute="top" secondItem="DXo-4c-JrM" secondAttribute="bottom" constant="12" id="eGB-l6-tGl"/>
                             <constraint firstItem="t1H-vC-Yke" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gx1-3j-CKU"/>
                             <constraint firstItem="of0-Hg-vKh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lMf-iU-USp"/>
                             <constraint firstItem="of0-Hg-vKh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lac-Ij-ZQX"/>
+                            <constraint firstItem="k9d-pP-HSH" firstAttribute="centerY" secondItem="9Qp-KP-qSH" secondAttribute="centerY" id="nFx-8B-BNq"/>
                             <constraint firstItem="DXo-4c-JrM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uRd-YG-JY6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DXo-4c-JrM" secondAttribute="trailing" constant="16" id="v72-HY-AoZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cancelBtn" destination="9Qp-KP-qSH" id="AC9-qm-1P9"/>
                         <outlet property="centerMapBtn" destination="k9d-pP-HSH" id="ynF-Nx-KiW"/>
                         <outlet property="destinationCircle" destination="geW-v8-Ncq" id="sHZ-zA-TaZ"/>
                         <outlet property="destinationTextField" destination="Q3i-fM-aIO" id="U9n-g5-8Vo"/>

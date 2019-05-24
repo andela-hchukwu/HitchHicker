@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, Alertable {
     @IBOutlet weak var centerMapBtn: UIButton!
     @IBOutlet weak var destinationTextField: UITextField!
     @IBOutlet weak var destinationCircle: CircleView!
+    @IBOutlet weak var cancelBtn: UIButton!
 
     var delegate: CenterVCDelegate?
 
@@ -105,6 +106,28 @@ class HomeViewController: UIViewController, Alertable {
                 })
             }
         })
+
+        DataService.instance.REF_TRIPS.observe(.value, with: { removedTripSnapshot in
+            let removedTripDict = removedTripSnapshot.value as? [String: AnyObject]
+            if removedTripDict?["driverKey"] != nil {
+                DataService.instance.REF_DRIVERS.child(removedTripDict?["driverKey"] as! String).updateChildValues(["driverIsOnTrip": false])
+
+                DataService.instance.userIsDriver(userKey: self.currentUserId!, handler: { isDriver in
+                    if isDriver == true {
+                        // Remove overlays and annotations / hide request ride btn and cancel btn
+                    } else {
+                        self.cancelBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+                        self.requestRideBtn.animateButton(shouldLoad: false, withMessage: "Request ride")
+
+                        self.destinationTextField.isUserInteractionEnabled = true
+                        self.destinationTextField.text = ""
+
+                        // remove all map annotations and overlays
+                        self.centerMapOnUserLocation()
+                    }
+                })
+            }
+        })
     }
 
     func checkLocationAuthStatus() {
@@ -166,6 +189,23 @@ class HomeViewController: UIViewController, Alertable {
         let coordinateRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+
+    @IBAction func cancelBtnWasPressed(_ sender: Any) {
+        DataService.instance.driverIsOnTrip(driverKey: currentUserId!) { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
+                UpdateService.instance.cancelTrip(withPassengerKey: tripKey!, forDriverKey: driverKey!)
+            }
+        }
+
+        DataService.instance.passengerIsOnTrip(passengerKey: currentUserId!) { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
+                UpdateService.instance.cancelTrip(withPassengerKey: self.currentUserId!, forDriverKey: driverKey!)
+            } else {
+                UpdateService.instance.cancelTrip(withPassengerKey: self.currentUserId!, forDriverKey: driverKey!)
+            }
+        }
+    }
+
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
 
